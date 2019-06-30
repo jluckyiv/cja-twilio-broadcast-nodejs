@@ -37,7 +37,7 @@ function sendMessage(body) {
 }
 function scheduleMessage(dateString, body) {
   const date = dateString ? moment(dateString) : moment();
-  const sendDate = date.add(3, 'minute');
+  const sendDate = date.add(3, 'minutes');
   const content = body ? body : `This message should be received at ${sendDate.format('H:mm')}.`;
   schedule.scheduleJob(sendDate.toDate(), sendMessage(content));
 }
